@@ -1,5 +1,9 @@
 @extends('layouts/default')
 
+@section('pageTitle')
+Status Update Utility
+@stop
+
 @section('scripts')
 <script type="text/javascript">
     $(function() {
