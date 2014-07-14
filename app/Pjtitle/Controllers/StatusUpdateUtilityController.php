@@ -36,8 +36,6 @@ class StatusUpdateUtilityController extends BaseController {
             ->with('migrationStatus')
             ->get();
 
-        dd(count($primes));
-
         if (count($primes) <= 0)
         {
             return Response::make("Congratulations! We've finished.", 404);
