@@ -46,7 +46,7 @@ class MigrationToolsUpdateStatusCommand extends Command {
 	{
         $primes = $this->prime->createModel()
             ->has('migrationStatus', '=', 0)
-            ->take(100)
+            ->take(500)
             ->with('priorReferences')
             ->with('migrationStatus')
             ->get();
