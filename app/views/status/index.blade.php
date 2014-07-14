@@ -11,13 +11,15 @@
                backdrop: 'static',
                keyboard: false,
                show: true
-           })
+           });
+
+           $('#button-execute').addClass('hide');
 
            // Assign handlers immediately after making the request,
            // and remember the jqXHR object for this request
            var jqxhr = $.ajax("{{ URL::to('tools/status-update-utility/execute') }}")
                .done(function( msg ) {
-                   alert( msg );
+                   $('#button-execute').removeClass('hide');
                })
                .fail(function(msg) {
                    $('#button-execute').hide();
