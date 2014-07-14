@@ -78,6 +78,6 @@ class StatusUpdateUtilityController extends BaseController {
             $prime->migrationStatus()->save($status);
         }
 
-        return Response::make('Success', 404);
+        return Response::make('Success', 200);
     }
 }
