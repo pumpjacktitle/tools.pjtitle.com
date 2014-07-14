@@ -1,7 +1,9 @@
 <?php namespace Pjtitle\Controllers;
 
 use BaseController;
+use File;
 use Illuminate\Support\Facades\Response;
+use Laracasts\Utilities\JavaScript\Facades\JavaScript;
 use View;
 use PjtitleData\VcConnector\Repositories\PrimeRepository;
 
@@ -25,6 +27,30 @@ class StatusUpdateUtilityController extends BaseController {
     public function index()
     {
         return View::make('status/index');
+    }
+
+    public function logs()
+    {
+        $logFilePath = base_path() . "/logs/statusUpdateCron.txt";
+
+        $logContents = File::get($logFilePath);
+
+        $logContents = explode("\n", $logContents);
+
+        JavaScript::put([
+            'logs' => $logContents
+        ]);
+
+        return View::make('status/logs', compact('logFilePath'));
+    }
+
+    public function getLog()
+    {
+        $logFilePath = base_path() . "/logs/statusUpdateCron.txt";
+
+        $logContents = File::get($logFilePath);
+
+        return Response::make($logContents);
     }
 
     public function execute()

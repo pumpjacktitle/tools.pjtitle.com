@@ -18,6 +18,8 @@ Route::get('/', function()
 
 Route::get('tools/status-update-utility', 'Pjtitle\Controllers\StatusUpdateUtilityController@index');
 Route::get('tools/status-update-utility/execute', 'Pjtitle\Controllers\StatusUpdateUtilityController@execute');
+Route::get('tools/status-update-utility/logs', 'Pjtitle\Controllers\StatusUpdateUtilityController@logs');
+Route::get('tools/status-update-utility/getLog', 'Pjtitle\Controllers\StatusUpdateUtilityController@getLog');
 
 
 Route::get('search', function()

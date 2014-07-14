@@ -122,7 +122,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
-        'PjtitleData\SearchApi\SearchApiServiceProvider'
+        'PjtitleData\SearchApi\SearchApiServiceProvider',
+        'Laracasts\Utilities\UtilitiesServiceProvider'
 
 	),
 

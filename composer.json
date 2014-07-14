@@ -15,7 +15,8 @@
         "league/csv": "5.5.*@dev",
 
         "pjtitle-data/search-api": "dev-master",
-        "pjtitle-data/vc-connector": "dev-master"
+        "pjtitle-data/vc-connector": "dev-master",
+        "laracasts/utilities": "~1.0"
 	},
 	"autoload": {
 		"classmap": [

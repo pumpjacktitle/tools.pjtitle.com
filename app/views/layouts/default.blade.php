@@ -16,11 +16,12 @@
             <div class="container">
                 <a class="navbar-brand" href="#">Migration Status Tool</a>
                 <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="#">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Link</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Status Utility <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ URL::to('tools/status-update-utility') }}">Run Utility</a></li>
+                            <li><a href="{{ URL::to('tools/status-update-utility/logs') }}">Logs</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -30,12 +31,6 @@
             @yield('content')
 		</div>
 
-		<!-- jQuery -->
-		<script src="//code.jquery.com/jquery.js"></script>
-		<!-- Bootstrap JavaScript -->
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-
-        @section('scripts')
-        @show
+		@include('layouts/partials/footer')
 	</body>
 </html>
