@@ -15,6 +15,12 @@ Status Update Utility Logs
 
         $("#log-display").html(newHTML.join(""));
 
+        var reload = function ReloadPage() {
+            location.reload();
+        }
+
+        setTimeout(reload, 300000);
+
     });
 </script>
 @stop
@@ -29,7 +35,9 @@ Status Update Utility Logs
     </p>
 </div>
 
-<p></p>
+<p class="alert alert-info">
+    This page will automatically refresh every 5 minutes to display any new logs.
+</p>
 
 <div class="row">
     <div class="col-md-12" style="max-height: 400px; overflow-y: auto">
