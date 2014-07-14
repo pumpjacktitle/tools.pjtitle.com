@@ -11,3 +11,4 @@
 |
 */
 
+Artisan::add(new \Pjtitle\Commands\MigrationToolsUpdateStatusCommand);
