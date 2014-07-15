@@ -42,7 +42,6 @@
             colHeaders: ["Abstract #", "Survey Name", "Survey #", "Acreage", "Subdivision", "Block", "Lot"],
             minSpareRows: 1,
             colWidths: [100, 300, 85, 80, 300, 80, 80],
-            stretchH: 'all',
             contextMenu: true,
             manualColumnMove: true,
             manualColumnResize: true,
