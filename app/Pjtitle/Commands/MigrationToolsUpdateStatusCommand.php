@@ -46,7 +46,7 @@ class MigrationToolsUpdateStatusCommand extends Command {
 	{
         $primes = $this->prime->createModel()
             ->has('migrationStatus', '=', 0)
-            ->take(1000)
+            ->take($this->option('take'))
             ->with('priorReferences')
             ->with('migrationStatus')
             ->get();
@@ -101,4 +101,16 @@ class MigrationToolsUpdateStatusCommand extends Command {
         File::append($filePath, "\n{$totalPrimes} were updated at {$finishTime}");
 
 	}
+
+    /**
+     * Get the console command options.
+     *
+     * @return array
+     */
+    protected function getOptions()
+    {
+        return array(
+            array('take', null, InputOption::VALUE_OPTIONAL, 'Number to take', null),
+        );
+    }
 }
