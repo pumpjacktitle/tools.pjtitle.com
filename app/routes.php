@@ -29,6 +29,11 @@ Route::get('dataentry', function() {
     return View::make('dataentry');
 });
 
+Route::get('preview-window', function() {
+
+    return View::make('preview');
+});
+
 
 Route::get('aws', function() {
 
