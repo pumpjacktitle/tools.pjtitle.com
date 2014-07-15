@@ -2,6 +2,7 @@
 
 use App;
 use Carbon\Carbon;
+use DB;
 use File;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Mail;
@@ -44,6 +45,8 @@ class MigrationToolsUpdateStatusCommand extends Command {
 	 */
 	public function fire()
 	{
+        DB::connection('cwlake_cwl')->disableQueryLog();
+
         $primes = $this->prime->createModel()
             ->has('migrationStatus', '=', 0)
             ->take($this->option('take'))
