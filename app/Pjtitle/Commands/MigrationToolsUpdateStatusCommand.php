@@ -44,9 +44,7 @@ class MigrationToolsUpdateStatusCommand extends Command {
 	 * @return mixed
 	 */
 	public function fire()
-	{
-        DB::connection('cwlake_cwl')->disableQueryLog();
-
+    {
         $primes = $this->prime->createModel()
             ->has('migrationStatus', '=', 0)
             ->take($this->option('take'))
